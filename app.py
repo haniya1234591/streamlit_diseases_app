@@ -4,8 +4,11 @@ import pickle
 
 
 
-model=pickle.load(open('model/model.pkl','rb'))
-scaler=pickle.load(open('model/scaler.pkl','rb'))
+import os
+
+base_path = os.path.dirname(__file__)
+model = pickle.load(open(os.path.join(base_path, 'model/model.pkl'), 'rb'))
+scaler_model = pickle.load(open(os.path.join(base_path, 'model/scaler.pkl'), 'rb'))
 
 st.title("Diabetes Prediction Application")
 st.write("Please enter patient disease to predict risk of diabetes")
